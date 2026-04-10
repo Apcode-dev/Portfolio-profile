@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills - Akash Prajapati</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #fff;
+        }
+
+        .container {
+            padding: 50px 80px;
+            min-height: 100vh;
+        }
+
+        .title {
+            font-size: 60px;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #8b5cf6;
+            font-size: 26px;
+            margin: 40px 0 20px;
+            font-weight: bold;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: transparent;
+            perspective: 1000px;
+            height: 160px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform .6s;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #111827;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid transparent;
+        }
+
+        .card-front i {
+            font-size: 40px;
+            color: #8b5cf6;
+            margin-bottom: 10px;
+        }
+
+        .card:hover .card-front {
+            border: 1px solid #8b5cf6;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            color: #cbd5e1;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .side-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            width: 45px;
+            height: 45px;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: .3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+        }
+
+        .nav-btn:hover {
+            background: #8b5cf6;
+            transform: translateX(-5px);
+        }
+
+        .nav-btn.active {
+            background: #8b5cf6;
+        }
+
+        /* Responsive */
+
+        @media(max-width:1024px) {
+
+            .skills {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .container {
+                padding: 30px;
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .side-nav {
+                bottom: 20px;
+                top: auto;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+                background: #111827;
+                padding: 10px;
+                border-radius: 30px;
+            }
+
+
+        }
+
+        @media(max-width:480px) {
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">MY SKILLS</h1>
+
+        <p class="subtitle">
+            Here are my technical skills and editing tools I use to build modern websites and creative edits.
+        </p>
+
+        <!-- Programming Skills -->
+
+        <h2 class="section-title">Programming & Development</h2>
+        <div class="side-nav">
+            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i></a>
+            <a href="gallery.html" class="nav-btn"><i class="fas fa-image"></i></a>
+            <a href="About.html" class="nav-btn"><i class="fas fa-user"></i></a>
+            <a href="https://apcode-dev.github.io/Portfolio01/" class="nav-btn"><i class="fas fa-briefcase"></i></a>
+            <!-- <a href="blog.html" class="nav-btn"><i class="fas fa-bullhorn"></i></a> -->
+            <!-- <a href="contact.html" class="nav-btn"><i class="fas fa-paper-plane"></i></a> -->
+            <a href="https://www.linkedin.com/in/akash-s-prajapati-76238931a/" class="nav-btn" target="_blank"
+                title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ap.code.in/" class="nav-btn" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i></a>
+            <a href="contact.html" class="nav-btn" title="Contact">
+                <i class="fas fa-paper-plane"></i>
+            </a>
+        </div>
+        <div class="skills">
+
+            <div class="card">
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <i class="devicon-c-plain"></i>
+                        <h3>C Language</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>Strong foundation programming and problem solving.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="devicon-cplusplus-plain"></i>
+                        <h3>C++</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Object oriented programming and competitive coding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="devicon-java-plain"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Application development and backend programming.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <i class="devicon-python-plain"></i>
+                        <h3>Python</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>Used for scripting, automation and backend development.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <i class="devicon-react-original"></i>
+                        <h3>MERN Stack</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <p>MongoDB, Express, React and Node full stack development.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="devicon-php-plain"></i>
+                        <h3>PHP</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Dynamic website and backend development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="devicon-mysql-plain"></i>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Database management and data handling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="devicon-javascript-plain"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Frontend interaction and dynamic UI development.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Editing Skills -->
+
+        <h2 class="section-title">Editing & Design Tools</h2>
+
+        <div class="skills">
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-image"></i>
+                        <h3>Photoshop</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Professional photo editing and poster design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-video"></i>
+                        <h3>CapCut</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Video editing for reels and social media.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-pen-nib"></i>
+                        <h3>PixelLab</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Typography design and creative text editing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-palette"></i>
+                        <h3>PicsArt</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Creative photo editing and visual effects.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

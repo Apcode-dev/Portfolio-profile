@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Akash Prajapati | Web Developer | Graphic Designer | Photo & Video Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .bg-accent-main {
+            background-color: #8b5cf6;
+        }
+
+        .text-accent-main {
+            color: #8b5cf6;
+        }
+
+        .profile-container {
+            position: relative;
+            width: min(450px, 70vh);
+            height: min(450px, 70vh);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 12px solid #1e293b;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            z-index: 5;
+        }
+
+        .orbital-path {
+            position: absolute;
+            width: 108%;
+            height: 108%;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+            clip-path: polygon(50% 0%, 150% 0%, 150% 100%, 50% 100%);
+        }
+
+        .nav-dot {
+            position: absolute;
+            background-color: #1e293b;
+            color: #f8fafc;
+            width: clamp(38px, 4.5vh, 48px);
+            height: clamp(38px, 4.5vh, 48px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            z-index: 20;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-dot:hover {
+            background-color: #8b5cf6;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+            border-color: #8b5cf6;
+        }
+
+        .dot-1 {
+            transform: translate(-50%, -50%) rotate(290deg) translate(min(225px, 35vh)) rotate(-290deg);
+        }
+
+        .dot-1:hover {
+            transform: translate(-50%, -50%) rotate(290deg) translate(min(225px, 35vh)) rotate(-290deg) scale(1.2);
+        }
+
+        .dot-2 {
+            transform: translate(-50%, -50%) rotate(314deg) translate(min(225px, 35vh)) rotate(-314deg);
+        }
+
+        .dot-2:hover {
+            transform: translate(-50%, -50%) rotate(314deg) translate(min(225px, 35vh)) rotate(-314deg) scale(1.2);
+        }
+
+        .dot-3 {
+            transform: translate(-50%, -50%) rotate(338deg) translate(min(225px, 35vh)) rotate(-338deg);
+        }
+
+        .dot-3:hover {
+            transform: translate(-50%, -50%) rotate(338deg) translate(min(225px, 35vh)) rotate(-338deg) scale(1.2);
+        }
+
+        .dot-4 {
+            transform: translate(-50%, -50%) rotate(2deg) translate(min(225px, 35vh)) rotate(-2deg);
+        }
+
+        .dot-4:hover {
+            transform: translate(-50%, -50%) rotate(2deg) translate(min(225px, 35vh)) rotate(-2deg) scale(1.2);
+        }
+
+        .dot-5 {
+            transform: translate(-50%, -50%) rotate(26deg) translate(min(225px, 35vh)) rotate(-26deg);
+        }
+
+        .dot-5:hover {
+            transform: translate(-50%, -50%) rotate(26deg) translate(min(225px, 35vh)) rotate(-26deg) scale(1.2);
+        }
+
+        .dot-6 {
+            transform: translate(-50%, -50%) rotate(50deg) translate(min(225px, 35vh)) rotate(-50deg);
+        }
+
+        .dot-6:hover {
+            transform: translate(-50%, -50%) rotate(50deg) translate(min(225px, 35vh)) rotate(-50deg) scale(1.2);
+        }
+
+        .dot-7 {
+            transform: translate(-50%, -50%) rotate(74deg) translate(min(225px, 35vh)) rotate(-74deg);
+        }
+
+        .dot-7:hover {
+            transform: translate(-50%, -50%) rotate(74deg) translate(min(225px, 35vh)) rotate(-74deg) scale(1.2);
+        }
+
+        .line-decoration {
+            width: 60px;
+            height: 4px;
+            background-color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-text {
+            -webkit-text-stroke: 1.5px #8b5cf6;
+            color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .content-container {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+
+            .profile-container {
+                width: 320px;
+                height: 320px;
+            }
+
+            .orbital-path {
+                width: 105%;
+                height: 105%;
+            }
+
+        }
+
+        @media (max-width:768px) {
+
+            html,
+            body {
+                overflow: auto;
+            }
+
+            main {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .content-container {
+                order: 2;
+                text-align: center;
+            }
+
+            .profile-container {
+                width: 260px;
+                height: 260px;
+                margin-top: 10px;
+            }
+
+            .profile-image {
+                border: 8px solid #1e293b;
+            }
+
+            .nav-dot {
+                width: 34px;
+                height: 34px;
+                font-size: 12px;
+            }
+
+            .nav-dot:hover {
+                background-color: #8b5cf6;
+                box-shadow: 0 0 15px rgba(139, 92, 246, .6);
+                transform: scale(5.15);
+            }
+
+            .dot-1:hover,
+            .dot-2:hover,
+            .dot-3:hover,
+            .dot-4:hover,
+            .dot-5:hover,
+            .dot-6:hover {
+                transform: none !important;
+            }
+
+            .dot-1 {
+                transform: translate(-50%, -50%) rotate(290deg) translate(122px) rotate(-290deg);
+            }
+
+            .dot-2 {
+                transform: translate(-50%, -50%) rotate(314deg) translate(122px) rotate(-314deg);
+            }
+
+            .dot-3 {
+                transform: translate(-50%, -50%) rotate(338deg) translate(122px) rotate(-338deg);
+            }
+
+            .dot-4 {
+                transform: translate(-50%, -50%) rotate(2deg) translate(122px) rotate(-2deg);
+            }
+
+            .dot-5 {
+                transform: translate(-50%, -50%) rotate(26deg) translate(122px) rotate(-26deg);
+            }
+
+            .dot-6 {
+                transform: translate(-50%, -50%) rotate(50deg) translate(122px) rotate(-50deg);
+            }
+
+            .dot-7 {
+                transform: translate(-50%, -50%) rotate(74deg) translate(122px) rotate(-74deg);
+            }
+
+            h1 {
+                font-size: 34px !important;
+            }
+
+            h1 {
+                font-size: 42px !important;
+                line-height: 45px;
+            }
+
+            h2 {
+                font-size: 16px !important;
+            }
+
+            .bg-accent-main,
+            .bg-white {
+                font-size: 10px !important;
+                padding: 6px 10px !important;
+                white-space: normal !important;
+                text-align: center;
+            }
+
+            p {
+                font-size: 13px !important;
+                max-width: 90% !important;
+                margin: auto;
+            }
+
+            button {
+                padding: 10px 22px !important;
+                font-size: 12px !important;
+            }
+
+        }
+
+        @media (max-width:480px) {
+
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .nav-dot {
+                transition: all .9s ease;
+            }
+
+            .nav-dot:hover {
+                background-color: #8b5cf6;
+                box-shadow: 0 0 15px rgba(139, 92, 246, .6);
+                transform: scale(5.15);
+            }
+
+            .dot-1:hover,
+            .dot-2:hover,
+            .dot-3:hover,
+            .dot-4:hover,
+            .dot-5:hover,
+            .dot-6:hover {
+                transform: none !important;
+            }
+
+            .dot-1 {
+                transform: translate(-50%, -50%) rotate(290deg) translate(115px) rotate(-290deg);
+            }
+
+            .dot-2 {
+                transform: translate(-50%, -50%) rotate(314deg) translate(115px) rotate(-314deg);
+            }
+
+            .dot-3 {
+                transform: translate(-50%, -50%) rotate(338deg) translate(115px) rotate(-338deg);
+            }
+
+            .dot-4 {
+                transform: translate(-50%, -50%) rotate(2deg) translate(115px) rotate(-2deg);
+            }
+
+            .dot-5 {
+                transform: translate(-50%, -50%) rotate(26deg) translate(115px) rotate(-26deg);
+            }
+
+            .dot-6 {
+                transform: translate(-50%, -50%) rotate(50deg) translate(115px) rotate(-50deg);
+            }
+
+            .dot-7 {
+                transform: translate(-50%, -50%) rotate(74deg) translate(115px) rotate(-74deg);
+            }
+
+            h1 {
+                font-size: 34px !important;
+            }
+
+        }
+
+        @media (max-width:360px) {
+
+            .profile-container {
+                width: 200px;
+                height: 200px;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center overflow-hidden">
+
+    <main
+        class="w-full max-w-7xl px-8 md:px-16 flex flex-col lg:flex-row items-center justify-between gap-8 h-full py-12">
+
+        <!-- This is left section code -->
+        <div class="content-container z-20 flex flex-col justify-center order-2 lg:order-1 text-center lg:text-left">
+            <div class="line-decoration mx-auto lg:mx-0"></div>
+            <h2 class="text-2xl md:text-3xl font-black text-accent-main mb-1 tracking-tight">HI THERE!</h2>
+            <h1
+                class="text-6xl md:text-8xl font-black flex flex-wrap justify-center lg:justify-start items-baseline gap-4 mb-4">
+                I'M <span class="outline-text">AKASH</span>
+            </h1>
+
+            <div class="flex flex-col gap-2 mb-6 items-center lg:items-start">
+                <div
+                    class="bg-accent-main inline-block px-3 py-1 font-bold text-xs md:text-sm tracking-[0.2em] whitespace-nowrap text-white">
+                    MCA STUDENT / WEB DEVELOPER / PHOTO & VIDEO EDITOR
+                </div>
+                <div
+                    class="bg-white text-slate-900 inline-block px-3 py-1 font-bold text-xs md:text-sm tracking-[0.15em] whitespace-nowrap">
+                    BUILDING MODERN & RESPONSIVE WEBSITES / EDITING VIDEOS & PHOTOS
+                </div>
+            </div>
+
+            <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-sm mx-auto lg:mx-0 mb-8 font-medium">
+                I am Akash Prajapati, an MCA student, passionate Web Developer, and Video & Photo Editor. I create
+                responsive, modern, and user-friendly websites using HTML, CSS, JavaScript, React, and the MERN stack. I
+                also specialize in editing videos and photos, building clean UI designs, and developing real-world
+                projects with modern technologies.
+            </p>
+
+            <div class="flex justify-center lg:justify-start">
+                <!-- this is button  -->
+                <button
+                    class="bg-accent-main text-white px-10 py-3 rounded-full font-bold uppercase text-xs tracking-[0.2em] border-2 border-accent-main hover:bg-transparent hover:text-accent-main transition-all duration-300">
+                    More About Me
+                </button>
+            </div>
+        </div>
+
+        <!--  This is right section with nav -->
+        <div class="flex justify-center items-center relative order-1 lg:order-2">
+            <div class="profile-container">
+                <div class="orbital-path"></div>
+
+                <div class="absolute w-2 h-2 bg-accent-main rounded-full"
+                    style="left: 50%; top: -1px; transform: translateX(-50%);"></div>
+                <div class="absolute w-2 h-2 bg-accent-main rounded-full"
+                    style="left: 50%; bottom: -1px; transform: translateX(-50%);"></div>
+
+                <!-- These are the buttons -->
+                <a href="index.html" class="nav-dot dot-1" title="Home">
+                    <i class="fas fa-home"></i>
+                </a>
+
+                <a href="about.html" class="nav-dot dot-2" title="Profile">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="gallery.html" class="nav-dot dot-4" title="Gallery">
+                    <i class="fas fa-image"></i>
+                </a>
+                <a href="skills.html" class="nav-dot dot-3" title="Skills">
+                    <i class="fas fa-code"></i>
+                </a>
+                <a href="https://apcode-dev.github.io/Portfolio01/" class="nav-dot dot-7" title="Portfolio">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+                <!-- <a href="blog.html" class="nav-dot dot-5" title="Blog">
+                    <i class="fas fa-bullhorn"></i>
+                </a>
+
+                <a href="contact.html" class="nav-dot dot-6" title="Contact">
+                    <i class="fas fa-paper-plane"></i>
+                </a> -->
+                <a href="https://www.instagram.com/ap.code.in/" class="nav-dot dot-5" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/akash-s-prajapati-76238931a/" class="nav-dot dot-6" target="_blank"
+                    title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i></a>
+                <img src="./images/profile.jpeg" alt="Akash Prajapati Portfolio" class="profile-image">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', function () {
+                const page = this.getAttribute('title');
+                console.log(`Navigating to section: ${page}`);
+            });
+        });
+    </script>
+</body>
+
+</html>

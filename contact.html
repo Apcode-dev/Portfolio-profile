@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Akash Prajapati</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #fff;
+        }
+
+        .container {
+            padding: 50px 80px;
+            min-height: 100vh;
+        }
+
+        .title {
+            font-size: 60px;
+            color: #8b5cf6;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-box {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: #111827;
+            padding: 20px;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+        .info-box:hover {
+            border: 1px solid #8b5cf6;
+        }
+
+        .info-box i {
+            font-size: 20px;
+            color: #8b5cf6;
+        }
+
+        .form {
+            background: #111827;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #0f172a;
+            border: 1px solid #1f2937;
+            color: #fff;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form input:focus,
+        .form textarea:focus {
+            border: 1px solid #8b5cf6;
+        }
+
+        .form button {
+            background: #8b5cf6;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .form button:hover {
+            background: #7c3aed;
+        }
+
+        .social {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social a {
+            width: 40px;
+            height: 40px;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .social a:hover {
+            background: #8b5cf6;
+        }
+
+        .side-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            width: 45px;
+            height: 45px;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: .3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+        }
+
+        .nav-btn:hover {
+            background: #8b5cf6;
+            transform: translateX(-5px);
+        }
+
+        .nav-btn.active {
+            background: #8b5cf6;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px) {
+
+            .container {
+                padding: 30px;
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                bottom: 20px;
+                top: auto;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+                background: #111827;
+                padding: 10px;
+                border-radius: 30px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 class="title">CONTACT ME</h1>
+
+        <p class="subtitle">
+            Feel free to contact me for web development, photo editing, and video editing projects.
+        </p>
+
+        <div class="contact-grid">
+
+            <!-- Left Info -->
+
+            <div class="contact-info">
+
+                <div class="info-box">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <h3>Akash Prajapati</h3>
+                        <p>Web Developer & Editor</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>ap91579601@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 91579 60138</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h3>Varanasi</h3>
+                        <p>India</p>
+                    </div>
+                </div>
+
+                <div class="social">
+
+                    <a href="https://www.linkedin.com/in/akash-s-prajapati-76238931a/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/ap.code.in/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="form">
+
+                <form action="https://formsubmit.co/ap91579601@email.com" method="POST">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+
+                    <input type="email" name="email" placeholder="Your Email" required>
+
+                    <input type="text" name="subject" placeholder="Subject" required>
+
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                    <button type="submit">Send Message</button>
+
+                </form>
+
+            </div>
+            <div class="side-nav">
+                <a href="index.html" class="nav-btn"><i class="fas fa-home"></i></a>
+                <a href="gallery.html" class="nav-btn"><i class="fas fa-image"></i></a>
+                <a href="About.html" class="nav-btn"><i class="fas fa-user"></i></a>
+                <a href="skills.html" class="nav-btn"><i class="fas fa-code"></i></a>
+                <a href="https://apcode-dev.github.io/Portfolio01/" class="nav-btn">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/akash-s-prajapati-76238931a/" class="nav-btn" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://www.instagram.com/ap.code.in/" class="nav-btn" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+
+            var name = document.querySelector("[name=name]").value;
+            var message = document.querySelector("[name=message]").value;
+
+            var url = "https://wa.me/919157960138?text="
+                + "New Contact Form%0A"
+                + "Name: " + name + "%0A"
+                + "Message: " + message;
+
+            window.open(url);
+
+        });
+    </script>
+</body>
+
+</html>

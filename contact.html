@@ -270,7 +270,10 @@
 
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New Portfolio Message">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+
+                    <!-- Redirect to Home -->
+                    <input type="hidden" name="_next" value="https://apcode-dev.github.io/Portfolio-profile/">
 
                     <input type="text" name="name" placeholder="Your Name" required>
 
@@ -278,10 +281,10 @@
 
                     <input type="text" name="subject" placeholder="Subject">
 
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
                     <button type="submit">Send Message</button>
-                    <input type="hidden" name="_next" value="https://apcode-dev.github.io/Portfolio-profile/">
+
                 </form>
 
             </div>
